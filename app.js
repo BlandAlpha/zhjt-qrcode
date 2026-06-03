@@ -18,7 +18,7 @@ function drawQR() {
   const canvas = document.getElementById('qr');
   const ctx    = canvas.getContext('2d');
   const SZ     = canvas.width;
-  const COLOR  = '#6c6c6c';
+  const COLOR  = '#666666';
   const QUIET  = 3; // 静区模块数
 
   // 预置 16 个随机载荷（48字节随机数据的大写十六进制），每次刷新从中选一个，
