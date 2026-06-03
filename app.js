@@ -95,7 +95,7 @@ function startCountdown() {
   countEl.textContent = count;
   timer = setInterval(() => {
     count--;
-    if (count <= 0) { count = 0; clearInterval(timer); }
+    if (count <= 0) { count = 0; clearInterval(timer); onRefresh(); }
     countEl.textContent = count;
   }, 1000);
 }
