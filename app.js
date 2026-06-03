@@ -1,8 +1,12 @@
-/* ---------- 有效期至：当前时间 +3 天 早上 8 点 ---------- */
+/* ---------- 有效期至：当前时间 +3 天，时间随机生成一次 ---------- */
 function setExpire() {
   const d = new Date();
   d.setDate(d.getDate() + 3);
-  d.setHours(8, 0, 0, 0);
+  // 随机时间：时 8-22，分/秒随机
+  const h = 8 + Math.floor(Math.random() * 15);
+  const m = Math.floor(Math.random() * 60);
+  const s = Math.floor(Math.random() * 60);
+  d.setHours(h, m, s, 0);
   const p = n => String(n).padStart(2, '0');
   const str = d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate())
             + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
@@ -107,7 +111,8 @@ function initUserNameEdit() {
 
   userNameEdit.addEventListener('click', () => {
     if (!userNameEdit.classList.contains('editing')) {
-      userNameInput.value = userNameDisplay.textContent.trim();
+      const tn = Array.from(userNameDisplay.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+      userNameInput.value = tn ? tn.textContent.trim() : '';
       userNameEdit.classList.add('editing');
       userNameInput.focus();
       userNameInput.select();
@@ -116,7 +121,13 @@ function initUserNameEdit() {
 
   function saveUserName() {
     const newName = userNameInput.value.trim() || '用户名';
-    userNameDisplay.textContent = newName;
+    // 只更新文字节点，保留 SVG 图标
+    const textNode = Array.from(userNameDisplay.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+    if (textNode) {
+      textNode.textContent = newName;
+    } else {
+      userNameDisplay.insertBefore(document.createTextNode(newName), userNameDisplay.firstChild);
+    }
     userNameEdit.classList.remove('editing');
   }
 

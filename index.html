@@ -25,6 +25,7 @@
         <div class="user-mask">********************</div>
       </div>
       <button class="logout" onclick="toast('退出登录')">退出登录</button>
+
     </div>
   </div>
 
@@ -52,15 +53,20 @@
     </div>
     <div class="divider"></div>
     <div class="grid">
-      <div class="grid-item" onclick="toast('一键申报')"><div class="circle c-green">☰</div><span>一键申报</span></div>
-      <div class="grid-item" onclick="toast('信息变更')"><div class="circle c-blue">✎</div><span>信息变更</span></div>
-      <div class="grid-item" onclick="toast('人脸采集')"><div class="circle c-red">📷</div><span>人脸采集</span></div>
-      <div class="grid-item" onclick="toast('申报记录')"><div class="circle c-purple">📝</div><span>申报记录</span></div>
-      <div class="grid-item" onclick="toast('车辆管理')"><div class="circle c-orange">🚗</div><span>车辆管理</span></div>
-      <div></div>
-      <div class="grid-item" onclick="toast('扫一扫打卡')"><div class="circle c-green">⛶</div><span>扫一扫打卡</span></div>
-      <div class="grid-item" onclick="toast('打卡')"><div class="circle c-red">✓</div><span>打卡</span></div>
-      <div class="grid-item" onclick="toast('我的考勤')"><div class="circle c-purple">📅</div><span>我的考勤</span></div>
+      <div class="grid-row">
+        <div class="grid-item" onclick="toast('一键申报')"><div class="circle c-green"><img src="icons/stack.png" class="grid-icon"></div><span>一键申报</span></div>
+        <div class="grid-item" onclick="toast('信息变更')"><div class="circle c-blue"><img src="icons/edit.png" class="grid-icon"></div><span>信息变更</span></div>
+        <div class="grid-item" onclick="toast('人脸采集')"><div class="circle c-red"><img src="icons/camera.png" class="grid-icon"></div><span>人脸采集</span></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-item" onclick="toast('申报记录')"><div class="circle c-purple"><img src="icons/file-pen.png" class="grid-icon"></div><span>申报记录</span></div>
+        <div class="grid-item" onclick="toast('车辆管理')"><div class="circle c-orange"><img src="icons/car.png" class="grid-icon"></div><span>车辆管理</span></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-item" onclick="toast('扫一扫打卡')"><div class="circle c-green2"><img src="icons/scan.png" class="grid-icon"></div><span>扫一扫打卡</span></div>
+        <div class="grid-item" onclick="toast('打卡')"><div class="circle c-red"><img src="icons/check_in.png" class="grid-icon"></div><span>打卡</span></div>
+        <div class="grid-item" onclick="toast('我的考勤')"><div class="circle c-purple"><img src="icons/Basic_calendar.png" class="grid-icon"></div><span>我的考勤</span></div>
+      </div>
     </div>
   </div>
 
